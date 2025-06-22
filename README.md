@@ -1,0 +1,2 @@
+# nivis
+final nixos configuration
