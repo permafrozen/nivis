@@ -11,6 +11,7 @@
       enable = true;
       enableUWSM = true;
     };
+    kitty.enable = true;
     locale = {
       enable = true;
       locale = "en_US.UTF-8";
