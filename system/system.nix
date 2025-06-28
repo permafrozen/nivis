@@ -7,4 +7,12 @@
     "nix-command"
     "flakes"
   ];
+
+  # Specification when using nixos-rebuild build-vm
+  virtualisation.vmVariant = {
+    virtualisation = {
+      memorySize = 4096;
+      cores = 2;
+    };
+  };
 }
