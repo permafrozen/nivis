@@ -11,7 +11,6 @@
       enable = true;
       enableUWSM = true;
     };
-    kitty.enable = true;
     locale = {
       enable = true;
       locale = "en_US.UTF-8";
@@ -22,5 +21,15 @@
       enable = true;
       layout = "de";
     };
+    fish = {
+      enable = true;
+      defaultShell = true;
+    };
+    zen-browser.enable = true;
+    helix.enable = true;
+    kitty.enable = true;
+    kanata.enable = true;
+    xdg.enable = true;
+    xanmod.enable = true;
   };
 }

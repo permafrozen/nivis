@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   cfg,
   setup,
@@ -24,6 +25,15 @@
 
     # Autostart into Hyprland when logging in
     home-manager.users.${setup.user} = lib.mkIf cfg.enableUWSM {
+
+      # # Fish autostart
+      # programs.fish.loginShellInit = lib.mkIf config.nivis.fish.enable ''
+      #   if uwsm check may-start
+      #       exec uwsm start -S hyprland-uwsm.desktop
+      #   end
+      # '';
+
+      # POSIX autostart
       home.file."profile" = {
         target = ".profile";
         text = ''
