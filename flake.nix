@@ -23,6 +23,10 @@
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -47,6 +51,7 @@
             modules = [
               inputs.home-manager.nixosModules.home-manager
               inputs.nur.modules.nixos.default
+              inputs.stylix.nixosModules.stylix
               ./host/laptop/default.nix
             ];
           };

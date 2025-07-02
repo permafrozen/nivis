@@ -8,12 +8,14 @@
 }:
 let
   cfg = config.nivis.zen-browser;
+  inherit (lib.options) mkEnableOption;
+  inherit (lib.modules) mkIf;
 in
 {
   options.nivis.zen-browser = {
-    enable = lib.mkEnableOption "Enable the Zen Browser";
+    enable = mkEnableOption "Enable the Zen Browser";
   };
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     home-manager.users.${setup.user} = {
       imports = [ inputs.zen-browser.homeModules.beta ];
       programs.zen-browser = {
@@ -123,6 +125,8 @@ in
             "google".metaData.alias = "@go"; # builtin engines only support specifying one additional alias
             "ddg".metaData.alias = "@ddg"; # ^
           };
+          userContent = mkIf config.nivis.stylix.enable (import ./userContent.nix { inherit config; }).css;
+          userChrome = mkIf config.nivis.stylix.enable (import ./userChrome.nix { inherit config; }).css;
         };
       };
     };
