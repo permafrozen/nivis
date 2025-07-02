@@ -6,10 +6,6 @@
   ...
 }:
 {
-  options.nivis.hyprland = {
-
-  };
-
   config = lib.mkIf cfg.enable {
     home-manager.users.${setup.user} = {
       wayland.windowManager.hyprland = {
@@ -35,7 +31,7 @@
               "$1mod, Q, killactive,"
               "$1mod, M, exit,"
 
-              # Windowfocus Controls
+              # windowfocus Controls
               "$1mod, H, movefocus, l"
               "$1mod, J, movefocus, d"
               "$1mod, K, movefocus, u"
@@ -66,10 +62,12 @@
               "$2mod, 0, movetoworkspacesilent, 10"
             ]
             ++ [
-              # open enabled terminal
-              (lib.mkIf config.nivis.foot.enable "$1mod, T, exec, foot")
-              (lib.mkIf config.nivis.contour.enable "$1mod, T, exec, contour")
-              (lib.mkIf config.nivis.kitty.enable "$1mod, T, exec, kitty")
+              # keybinds for enabled modules
+              (lib.mkIf config.nivis.foot.enable "$1mod, T, exec, app2unit -s a foot")
+              (lib.mkIf config.nivis.contour.enable "$1mod, T, exec, app2unit -s a contour")
+              (lib.mkIf config.nivis.kitty.enable "$1mod, T, exec, kitty") # no "app2unit -s a" since kitty is per default launched as a systemd unit scope
+              (lib.mkIf config.nivis.zen-browser.enable "$1mod, S, exec, app2unit -s a zen-beta")
+              (lib.mkIf config.nivis.anyrun.enable "$1mod, A, exec, anyrun")
             ];
 
           input = {
@@ -78,6 +76,8 @@
             mouse_refocus = false;
             follow_mouse = "0";
           };
+
+          monitor = cfg.monitors;
         };
       };
     };

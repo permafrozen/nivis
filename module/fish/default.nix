@@ -3,6 +3,7 @@
   lib,
   pkgs,
   setup,
+  inputs,
   ...
 }:
 let
@@ -41,10 +42,10 @@ in
         fish = {
           enable = true;
           functions = {
-            __fish_command_not_found_handler = {
-              body = "__fish_default_command_not_found_handler $argv[1]";
-              onEvent = "fish_command_not_found";
-            };
+            # __fish_command_not_found_handler = {
+            #   body = "__fish_default_command_not_found_handler $argv[1]";
+            #   onEvent = "fish_command_not_found";
+            # };
           };
           shellAliases = {
             ls = "eza";
@@ -77,6 +78,16 @@ in
           enable = true;
           silent = true;
         };
+        nix-index = {
+          enable = true;
+          enableFishIntegration = true;
+        };
+      };
+
+      # Database for nix-index command-not-found
+      home.file."nix-index" = {
+        target = ".cache/nix-index/files";
+        source = inputs.nix-index-database.packages.${setup.system}.nix-index-database;
       };
     };
   };

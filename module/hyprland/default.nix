@@ -14,6 +14,10 @@ in
 
   options.nivis.hyprland = {
     enable = lib.mkEnableOption "enables the configured wayland compositor hyprland";
+    monitors = lib.mkOption {
+      default = [ ];
+      type = with lib.types; listOf str;
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -24,7 +28,7 @@ in
 
     programs.hyprland = {
       enable = true;
-      withUWSM = lib.mkIf cfg.enableUWSM true;
+      withUWSM = true;
     };
   };
 }

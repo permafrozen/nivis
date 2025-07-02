@@ -1,18 +1,24 @@
 {
-  config,
   lib,
   cfg,
   setup,
+  pkgs,
   ...
 }:
 {
-  options.nivis.hyprland = {
-    enableUWSM = lib.mkEnableOption "enables UWSM to launch hyprland as a systemd unit";
-  };
 
-  config = {
+  config = lib.mkIf cfg.enable {
+    # Add app2unit for creating systemd scope units instead of uwsm app, since
+    # it is generally faster
+    environment = {
+      systemPackages = [ pkgs.app2unit ];
+      sessionVariables = {
+        APP2UNIT_SLICES = "a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice";
+      };
+    };
+
     # Enable UWSM to launch hyprland as as systemd unit
-    programs.uwsm = lib.mkIf cfg.enableUWSM {
+    programs.uwsm = {
       enable = true; # Uses the dbus-broker implementation automatically
       waylandCompositors = {
         hyprland = lib.mkDefault {
@@ -24,14 +30,7 @@
     };
 
     # Autostart into Hyprland when logging in
-    home-manager.users.${setup.user} = lib.mkIf cfg.enableUWSM {
-
-      # # Fish autostart
-      # programs.fish.loginShellInit = lib.mkIf config.nivis.fish.enable ''
-      #   if uwsm check may-start
-      #       exec uwsm start -S hyprland-uwsm.desktop
-      #   end
-      # '';
+    home-manager.users.${setup.user} = {
 
       # POSIX autostart
       home.file."profile" = {

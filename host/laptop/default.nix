@@ -7,10 +7,6 @@
   ];
 
   nivis = {
-    hyprland = {
-      enable = true;
-      enableUWSM = true;
-    };
     locale = {
       enable = true;
       locale = "en_US.UTF-8";
@@ -25,6 +21,15 @@
       enable = true;
       defaultShell = true;
     };
+    hyprland = {
+      enable = true;
+      monitors = [
+        "eDP-1, 1920x1080@60, 0x0, 1"
+        "HDMI-A-1, 1920x1080@60, 0x-1080, 1"
+        # "HDMI-A-1, 1920x1080@60, auto, 1, mirror, eDP-1"
+      ];
+    };
+    anyrun.enable = true;
     zen-browser.enable = true;
     helix.enable = true;
     kitty.enable = true;

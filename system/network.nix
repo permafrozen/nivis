@@ -8,4 +8,12 @@
     #   "1.0.0.1"
     # ];
   };
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
+  };
 }
