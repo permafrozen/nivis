@@ -10,6 +10,7 @@ in
   imports = [
     ./uwsm.nix
     ./config.nix
+    ./hyprpaper.nix
   ];
 
   options.nivis.hyprland = {
@@ -22,6 +23,7 @@ in
 
   config = lib.mkIf cfg.enable {
 
+    # All Imports inherit cfg
     _module.args = {
       inherit cfg;
     };
