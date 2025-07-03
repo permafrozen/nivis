@@ -18,7 +18,7 @@ in
     stylix = {
       enable = true;
       # themes from: https://tinted-theming.github.io/tinted-gallery/
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyodark.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
 
       # fc-list | grep -i <name> to find out the name of the fonts after installing
       fonts = {
