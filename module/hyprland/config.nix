@@ -11,6 +11,30 @@
       wayland.windowManager.hyprland = {
         enable = true;
         settings = {
+
+          decoration = {
+            rounding = 10;
+          };
+
+          ecosystem = {
+            no_update_news = true;
+            no_donation_nag = true;
+          };
+
+          misc = {
+            disable_hyprland_logo = "true";
+            disable_splash_rendering = "true";
+          };
+
+          input = {
+            touchpad.disable_while_typing = false;
+            kb_layout = "de";
+            mouse_refocus = false;
+            follow_mouse = "0";
+          };
+
+          monitor = cfg.monitors;
+
           "$1mod" = "SUPER";
           "$2mod" = "SUPER_ALT";
 
@@ -20,10 +44,24 @@
             "$1mod, mouse:273, resizewindow"
           ];
 
-          misc = {
-            disable_hyprland_logo = "true";
-            disable_splash_rendering = "true";
+          # Disable Scroll delay for cleaner zooming
+          binds = {
+            scroll_event_delay = 0;
           };
+
+          # Animations
+          bezier = "easeOutQuint, 0.22, 1, 0.36, 1";
+          animation = [
+            "layers, 1, 8, easeOutQuint, slide"
+            "windows, 1, 8, easeOutQuint, slide"
+            "workspaces, 1, 4, easeOutQuint, slide"
+          ];
+
+          # Zoom Keyboard binding
+          binde = [
+            "$1mod, minus, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 0.9}')"
+            "$1mod, plus, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 1.1}')"
+          ];
 
           bind =
             [
@@ -36,6 +74,10 @@
               "$1mod, J, movefocus, d"
               "$1mod, K, movefocus, u"
               "$1mod, L, movefocus, r"
+
+              # Zoom Controlls
+              "$1mod, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 1.1}')"
+              "$1mod, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 0.9}')"
 
               # move to workspace
               "$1mod, 1, workspace, 1"
@@ -69,15 +111,6 @@
               (lib.mkIf config.nivis.zen-browser.enable "$1mod, S, exec, app2unit -s a zen-beta")
               (lib.mkIf config.nivis.anyrun.enable "$1mod, A, exec, anyrun")
             ];
-
-          input = {
-            touchpad.disable_while_typing = false;
-            kb_layout = "de";
-            mouse_refocus = false;
-            follow_mouse = "0";
-          };
-
-          monitor = cfg.monitors;
         };
       };
     };
