@@ -45,6 +45,9 @@ in
             ublock-origin
             bitwarden
             wikiwand-wikipedia-modernized
+            youtube-shorts-block
+            search-by-image
+            return-youtube-dislikes
           ];
 
           settings = {
