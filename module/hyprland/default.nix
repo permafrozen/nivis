@@ -1,6 +1,8 @@
 {
   config,
   lib,
+  inputs,
+  setup,
   ...
 }:
 let
@@ -11,6 +13,7 @@ in
     ./uwsm.nix
     ./config.nix
     ./hyprpaper.nix
+    ./plugins.nix
   ];
 
   options.nivis.hyprland = {
@@ -28,9 +31,20 @@ in
       inherit cfg;
     };
 
+    # Use the caches build from Cachix
+    nix.settings = {
+      substituters = [ "https://hyprland.cachix.org" ];
+      trusted-substituters = [ "https://hyprland.cachix.org" ];
+      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+    };
+
     programs.hyprland = {
       enable = true;
       withUWSM = true;
+
+      # Use the Flake packages
+      package = inputs.hyprland.packages.${setup.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${setup.system}.xdg-desktop-portal-hyprland;
     };
   };
 }
