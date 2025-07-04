@@ -19,15 +19,15 @@
       --sidebar-text-color: #${config.lib.stylix.colors.base05} !important;
       --lwt-sidebar-text-color: #${config.lib.stylix.colors.base05} !important;
       --lwt-sidebar-background-color: #${config.lib.stylix.colors.base03} !important;
-      --toolbar-bgcolor: #${config.lib.stylix.colors.base00} !important;
+      --toolbar-bgcolor: #${config.lib.stylix.colors.base01} !important;
       --newtab-background-color: #${config.lib.stylix.colors.base00} !important;
-      --zen-themed-toolbar-bg: #${config.lib.stylix.colors.base02} !important;
-      --zen-main-browser-background: #${config.lib.stylix.colors.base00} !important;
-      --toolbox-bgcolor-inactive: #${config.lib.stylix.colors.base02} !important;
+      --zen-themed-toolbar-bg: #${config.lib.stylix.colors.base01} !important;
+      --zen-main-browser-background: #${config.lib.stylix.colors.base01} !important;
+      --toolbox-bgcolor-inactive: #${config.lib.stylix.colors.base01} !important;
     }
 
     #permissions-granted-icon {
-      color: #${config.lib.stylix.colors.base02} !important;
+      color: #${config.lib.stylix.colors.base01} !important;
     }
 
     .sidebar-placesTree {
@@ -39,7 +39,7 @@
     }
 
     #TabsToolbar {
-      background-color: #${config.lib.stylix.colors.base00} !important;
+      background-color: #${config.lib.stylix.colors.base01} !important;
     }
 
     #urlbar-background {
@@ -121,11 +121,11 @@
     }
 
     hbox#titlebar {
-      background-color: #${config.lib.stylix.colors.base00} !important;
+      background-color: #${config.lib.stylix.colors.base01} !important;
     }
 
     #zen-appcontent-navbar-container {
-      background-color: #${config.lib.stylix.colors.base00} !important;
+      background-color: #${config.lib.stylix.colors.base01} !important;
     }
   '';
 }
