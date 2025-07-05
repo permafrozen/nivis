@@ -4,6 +4,7 @@
     bat
     btop
     git
+    github-cli
     lazygit
     lazydocker
     ripgrep
