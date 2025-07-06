@@ -12,6 +12,10 @@
         enable = true;
         settings = {
 
+          general = {
+            allow_tearing = true;
+          };
+
           decoration = {
             rounding = 10;
           };
@@ -74,6 +78,7 @@
               "$1mod, J, movefocus, d"
               "$1mod, K, movefocus, u"
               "$1mod, L, movefocus, r"
+              "$1mod, F, fullscreen, 0"
 
               # Zoom Controlls
               "$1mod, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 1.1}')"
