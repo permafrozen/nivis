@@ -46,6 +46,11 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    schnell = {
+      url = "github:permafrozen/schnell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

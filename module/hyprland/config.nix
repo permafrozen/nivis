@@ -116,6 +116,10 @@
               (lib.mkIf config.nivis.zen-browser.enable "$1mod, S, exec, app2unit -s a zen-beta")
               (lib.mkIf config.nivis.anyrun.enable "$1mod, A, exec, anyrun")
             ];
+
+          exec-once = [
+            (lib.mkIf config.nivis.schnell.enable "app2unit -s s schnell")
+          ];
         };
       };
     };
