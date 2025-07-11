@@ -46,8 +46,10 @@ in
             bitwarden
             wikiwand-wikipedia-modernized
             youtube-shorts-block
+            youtube-recommended-videos
             search-by-image
             return-youtube-dislikes
+
           ];
 
           settings = {

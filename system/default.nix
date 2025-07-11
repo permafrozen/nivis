@@ -9,6 +9,7 @@
     ./kernel.nix
     ./network.nix
     ./packages.nix
+    ./power.nix
     ./system.nix
     ./user.nix
   ];
