@@ -78,6 +78,10 @@ in
           enable = true;
           silent = true;
         };
+        btop = {
+          enable = true;
+          settings = import ./btop.nix;
+        };
         nix-index = {
           enable = true;
           enableFishIntegration = true;
