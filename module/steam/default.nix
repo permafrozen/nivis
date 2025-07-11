@@ -14,6 +14,10 @@ in
     enable = mkEnableOption "Enable Steam Module";
   };
   config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      mangohud
+      gamemode
+    ];
     programs.steam = {
       enable = true;
       extraCompatPackages = with pkgs; [ proton-ge-bin ];

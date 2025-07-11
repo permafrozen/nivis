@@ -34,8 +34,8 @@ in
 
             # Vulcan Resolution Fix for Games
             csgo-vulkan-fix = {
-              res_w = 1680;
-              res_h = 1050;
+              res_w = 1280;
+              res_h = 720;
               class = "cs2";
               fix_mouse = true;
             };
