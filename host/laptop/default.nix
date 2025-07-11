@@ -40,5 +40,8 @@
     kanata.enable = true;
     xdg.enable = true;
     xanmod.enable = true;
+    prismlauncher.enable = true;
+    quickemu.enable = true;
+    schnell.enable = true;
   };
 }
