@@ -49,7 +49,7 @@ in
             youtube-recommended-videos
             search-by-image
             return-youtube-dislikes
-
+            youtube-nonstop
           ];
 
           settings = {
