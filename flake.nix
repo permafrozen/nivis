@@ -57,7 +57,7 @@
     { nixpkgs, ... }@inputs:
     {
       nixosConfigurations = {
-        laptop =
+        "laptop" =
           let
             setup = {
               user = "matteo";
