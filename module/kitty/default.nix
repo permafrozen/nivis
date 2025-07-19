@@ -6,13 +6,15 @@
 }:
 let
   cfg = config.nivis.kitty;
+  inherit (lib.modules) mkIf;
+  inherit (lib.options) mkEnableOption;
 in
 {
   options.nivis.kitty = {
-    enable = lib.mkEnableOption "Enables the kitty terminal emulator";
+    enable = mkEnableOption "Enables the kitty terminal emulator";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     home-manager.users.${setup.user} = {
       programs.kitty = {
         enable = true;
@@ -29,7 +31,7 @@ in
 
           # Font Settings
           "disable_ligatures" = "never";
-          "font_family" = "family=\"Dank Mono\"";
+          "font_family" = mkIf config.nivis.stylix.enable "family=\"${config.stylix.fonts.monospace.name}\"";
           "font_size" = 14;
           "bold_font" = "auto";
           "bold_italic_font" = "auto";

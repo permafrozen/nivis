@@ -8,14 +8,23 @@
 }:
 let
   cfg = config.nivis.helix;
+  package = pkgs.helix;
+  inherit (lib.modules) mkIf;
+  inherit (lib.options) mkEnableOption;
 in
 {
   options.nivis.helix = {
-    enable = lib.mkEnableOption "Enable the helix editor";
+    enable = mkEnableOption "Enable the helix editor";
   };
-  config = lib.mkIf cfg.enable {
+
+  config = mkIf cfg.enable {
+
     qt.enable = true;
+
     environment.systemPackages = with pkgs; [
+      # common
+      codebook
+
       # nixlang
       nixd
       nixfmt-rfc-style
@@ -24,6 +33,7 @@ in
       marksman
       prettier
     ];
+
     home-manager.users.${setup.user} = {
       programs.helix = {
         enable = true;
@@ -59,9 +69,17 @@ in
               formatter = {
                 command = "prettier";
               };
+              language-servers = [
+                "marksman"
+                "codebook"
+              ];
             }
           ];
           language-server = {
+            codebook = {
+              command = "codebook-lsp";
+              args = [ "serve" ];
+            };
             nixd = {
               command = "nixd";
               args = [ "--inlay-hints" ];

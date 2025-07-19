@@ -6,13 +6,15 @@
 }:
 let
   cfg = config.nivis.xdg;
+  inherit (lib.modules) mkIf;
+  inherit (lib.options) mkEnableOption;
 in
 {
   options.nivis.xdg = {
-    enable = lib.mkEnableOption "Enable custom xdg user directories";
+    enable = mkEnableOption "Enable custom xdg user directories";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     home-manager.users.${setup.user} = {
       xdg.userDirs = {
         enable = true;

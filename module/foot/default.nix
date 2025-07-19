@@ -6,13 +6,15 @@
 }:
 let
   cfg = config.nivis.foot;
+  inherit (lib.modules) mkIf;
+  inherit (lib.options) mkEnableOption;
 in
 {
   options.nivis.foot = {
-    enable = lib.mkEnableOption "Enable the lightweight wayland terminal called foot";
+    enable = mkEnableOption "Enable the lightweight wayland terminal called foot";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     home-manager.users.${setup.user} = {
       programs.foot = {
         enable = true;

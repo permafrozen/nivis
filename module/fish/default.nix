@@ -8,15 +8,17 @@
 }:
 let
   cfg = config.nivis.fish;
+  inherit (lib.modules) mkIf;
+  inherit (lib.options) mkEnableOption;
 in
 
 {
   options.nivis.fish = {
-    enable = lib.mkEnableOption "Enables the fish shell with a few utilities";
-    defaultShell = lib.mkEnableOption "Set fish as the default Shell instead of bash";
+    enable = mkEnableOption "Enables the fish shell with a few utilities";
+    defaultShell = mkEnableOption "Set fish as the default Shell instead of bash";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
 
     environment.systemPackages = with pkgs; [
       eza
@@ -26,7 +28,7 @@ in
     ];
 
     # Set fish as Default Shell
-    programs.bash = lib.mkIf cfg.defaultShell {
+    programs.bash = mkIf cfg.defaultShell {
       interactiveShellInit = ''
         if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
         then

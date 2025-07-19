@@ -1,14 +1,16 @@
 { config, lib, ... }:
 let
   cfg = config.nivis.kanata;
+  inherit (lib.modules) mkIf;
+  inherit (lib.options) mkEnableOption;
 in
 {
 
   options.nivis.kanata = {
-    enable = lib.mkEnableOption "Enable Kanata to switch Super-Key with Caps-Lock";
+    enable = mkEnableOption "Enable Kanata to switch Super-Key with Caps-Lock";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     services.kanata = {
       enable = true;
       keyboards.default = {

@@ -65,7 +65,7 @@ in
             "signon.rememberSignons" = false;
             "browser.translations.automaticallyPopup" = false;
             "zen.workspaces.force-container-workspace" = true;
-            "browser.download.lastDir" = "/home/matteo/downloads";
+            "browser.download.lastDir" = mkIf config.nivis.xdg.enable "/home/matteo/downloads";
             "zen.welcome-screen.seen" = true;
           };
 

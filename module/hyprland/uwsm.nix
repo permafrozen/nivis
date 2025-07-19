@@ -5,9 +5,12 @@
   pkgs,
   ...
 }:
+let
+  inherit (lib.modules) mkIf mkDefault;
+in
 {
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     # Add app2unit for creating systemd scope units instead of uwsm app, since
     # it is generally faster
     environment = {
@@ -21,7 +24,7 @@
     programs.uwsm = {
       enable = true; # Uses the dbus-broker implementation automatically
       waylandCompositors = {
-        hyprland = lib.mkDefault {
+        hyprland = mkDefault {
           prettyName = "hyprland";
           comment = "Hyprland compositor managed by UWSM";
           binPath = "/run/current-system/sw/bin/hyprland";

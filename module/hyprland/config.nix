@@ -5,8 +5,11 @@
   setup,
   ...
 }:
+let
+  inherit (lib.modules) mkIf;
+in
 {
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     home-manager.users.${setup.user} = {
       wayland.windowManager.hyprland = {
         enable = true;
@@ -110,16 +113,14 @@
             ]
             ++ [
               # keybinds for enabled modules
-              (lib.mkIf config.nivis.foot.enable "$1mod, T, exec, app2unit -s a foot")
-              (lib.mkIf config.nivis.contour.enable "$1mod, T, exec, app2unit -s a contour")
-              (lib.mkIf config.nivis.kitty.enable "$1mod, T, exec, kitty") # no "app2unit -s a" since kitty is per default launched as a systemd unit scope
-              (lib.mkIf config.nivis.zen-browser.enable "$1mod, S, exec, app2unit -s a zen-beta")
-              (lib.mkIf config.nivis.anyrun.enable "$1mod, A, exec, anyrun")
+              (mkIf config.nivis.foot.enable "$1mod, T, exec, app2unit -s a foot")
+              (mkIf config.nivis.contour.enable "$1mod, T, exec, app2unit -s a contour")
+              (mkIf config.nivis.kitty.enable "$1mod, T, exec, kitty") # no "app2unit -s a" since kitty is per default launched as a systemd unit scope
+              (mkIf config.nivis.zen-browser.enable "$1mod, S, exec, app2unit -s a zen-beta")
+              (mkIf config.nivis.anyrun.enable "$1mod, A, exec, anyrun")
             ];
 
-          exec-once = [
-            (lib.mkIf config.nivis.schnell.enable "app2unit -s s schnell")
-          ];
+          exec-once = [ (mkIf config.nivis.schnell.enable "app2unit -s s schnell") ];
         };
       };
     };

@@ -2,26 +2,17 @@
   config,
   lib,
   pkgs,
-  setup,
   ...
 }:
 let
   cfg = config.nivis.contour;
+  inherit (lib.modules) mkIf;
+  inherit (lib.options) mkEnableOption;
 in
 {
   options.nivis.contour = {
-    enable = lib.mkEnableOption "enable the modern c++ contour terminal emulator";
+    enable = mkEnableOption "enable the modern c++ contour terminal emulator";
   };
 
-  config = lib.mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.contour ];
-    # home-manager.users.${setup.user} = {
-    #   home.file."contour" = {
-    #     target = ".config/contour/contour.yml";
-    #     text = ''
-
-    #     '';
-    #   };
-    # };
-  };
+  config = mkIf cfg.enable { environment.systemPackages = [ pkgs.contour ]; };
 }

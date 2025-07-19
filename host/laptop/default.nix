@@ -39,9 +39,10 @@
     kitty.enable = true;
     kanata.enable = true;
     xdg.enable = true;
-    xanmod.enable = true;
+    xanmod.enable = false;
     prismlauncher.enable = true;
     quickemu.enable = true;
     schnell.enable = true;
+    discord.enable = true;
   };
 }

@@ -7,6 +7,9 @@
 }:
 let
   cfg = config.nivis.hyprland;
+  inherit (lib.modules) mkIf;
+  inherit (lib.options) mkEnableOption mkOption;
+  inherit (lib.types) listOf str;
 in
 {
   imports = [
@@ -17,19 +20,17 @@ in
   ];
 
   options.nivis.hyprland = {
-    enable = lib.mkEnableOption "enables the configured wayland compositor hyprland";
-    monitors = lib.mkOption {
+    enable = mkEnableOption "enables the configured wayland compositor hyprland";
+    monitors = mkOption {
       default = [ ];
-      type = with lib.types; listOf str;
+      type = listOf str;
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
 
     # All Imports inherit cfg
-    _module.args = {
-      inherit cfg;
-    };
+    _module.args = { inherit cfg; };
 
     # Use the caches build from Cachix
     nix.settings = {

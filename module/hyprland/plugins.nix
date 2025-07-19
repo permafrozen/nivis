@@ -20,7 +20,7 @@ in
         # Hyprland Plugins from the flake inputs
         plugins = [
           inputs.hypr-dynamic-cursors.packages.${setup.system}.hypr-dynamic-cursors
-          inputs.hyprland-plugins.packages.${setup.system}.csgo-vulkan-fix
+          # inputs.hyprland-plugins.packages.${setup.system}.csgo-vulkan-fix
         ];
 
         # Hyprland Plugin settings
@@ -33,12 +33,12 @@ in
             };
 
             # Vulcan Resolution Fix for Games
-            csgo-vulkan-fix = {
-              res_w = 1280;
-              res_h = 720;
-              class = "cs2";
-              fix_mouse = true;
-            };
+            # csgo-vulkan-fix = {
+            #   res_w = 1280;
+            #   res_h = 720;
+            #   class = "cs2";
+            #   fix_mouse = true;
+            # };
           };
         };
       };

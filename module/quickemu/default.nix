@@ -47,10 +47,10 @@ in
     boot.kernelModules = [
       "kvm"
       "kvm-amd"
-    ]; # Use "kvm-amd" for AMD CPUs
+    ];
     boot.kernelParams = [
       "amd_iommu=on"
       "iommu=pt"
-    ]; # Enable IOMMU for AMD
+    ];
   };
 }
