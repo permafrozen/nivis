@@ -1,10 +1,39 @@
 {
-  description = "nixos configuration flake";
+  description = "final nixos configuration flake";
+
+  outputs =
+    { nixpkgs, ... }@inputs:
+    {
+      nixosConfigurations.nixos =
+        let
+          setup = {
+            user = "matteo";
+            host = "nixos";
+            system = "x86_64-linux";
+            time = "Europe/Vienna";
+            layout = "de";
+            locale = "de_AT.UTF-8";
+          };
+        in
+        nixpkgs.lib.nixosSystem {
+          system = setup.system;
+          specialArgs = {
+            inherit setup;
+            inherit inputs;
+            helper = import ./configuration/helper { lib = nixpkgs.lib; };
+          };
+          modules = [
+            inputs.home-manager.nixosModules.home-manager
+            inputs.nur.modules.nixos.default
+            inputs.stylix.nixosModules.stylix
+            ./configuration
+          ];
+        };
+    };
 
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-
     nur.url = "github:nix-community/NUR";
 
     nix-index-database = {
@@ -52,33 +81,4 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs =
-    { nixpkgs, ... }@inputs:
-    {
-      nixosConfigurations = {
-        "laptop" =
-          let
-            setup = {
-              user = "matteo";
-              host = "laptop";
-              system = "x86_64-linux";
-            };
-          in
-          nixpkgs.lib.nixosSystem {
-            system = setup.system;
-            specialArgs = {
-              inherit setup;
-              inherit inputs;
-              libExtra = import ./lib { lib = nixpkgs.lib; };
-            };
-            modules = [
-              inputs.home-manager.nixosModules.home-manager
-              inputs.nur.modules.nixos.default
-              inputs.stylix.nixosModules.stylix
-              ./host/laptop/default.nix
-            ];
-          };
-      };
-    };
 }
