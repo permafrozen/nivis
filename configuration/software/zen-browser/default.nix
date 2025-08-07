@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   setup,
+  lib,
   ...
 }:
 {
@@ -119,6 +120,11 @@
           "google".metaData.alias = "@go"; # builtin engines only support specifying one additional alias
           "ddg".metaData.alias = "@ddg"; # ^
         };
+        userContent = lib.mkForce ''
+          @-moz-document url-prefix(http) {
+            body { background: white !important; }
+          }
+        '';
       };
     };
   };

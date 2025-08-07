@@ -34,7 +34,7 @@
     };
   };
 
-  home-manager.users.${setup.user} = {
-    stylix.targets.zen-browser.profileNames = [ "default" ];
+  home-manager.users.${setup.user}.stylix.targets = {
+    zen-browser.profileNames = [ "default" ];
   };
 }
