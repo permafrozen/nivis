@@ -48,7 +48,7 @@
           "devtools.debugger.remote-enabled" = true;
           "devtools.chrome.enabled" = true;
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-          "browser.tabs.allow_transparent_browser" = true;
+          "browser.tabs.allow_transparent_browser" = false;
           "zen.widget.linux.transparency" = false;
           "gfx.webrender.all" = true;
           "zen.view.grey-out-inactive-windows" = false;
@@ -120,11 +120,6 @@
           "google".metaData.alias = "@go"; # builtin engines only support specifying one additional alias
           "ddg".metaData.alias = "@ddg"; # ^
         };
-        userContent = lib.mkForce ''
-          @-moz-document url-prefix(http) {
-            body { background: white !important; }
-          }
-        '';
       };
     };
   };
