@@ -9,7 +9,7 @@
         };
 
         decoration = {
-          rounding = 10;
+          rounding = 20;
         };
 
         ecosystem = {

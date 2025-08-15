@@ -11,5 +11,6 @@
     ./power.nix
     ./system.nix
     ./user.nix
+    ./graphics.nix
   ];
 }
