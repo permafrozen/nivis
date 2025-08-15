@@ -33,6 +33,20 @@
           set -U fish_greeting
           direnv hook fish | source
         '';
+        functions = {
+          rsl = ''
+            if test (count $argv) -ne 1
+              echo "Error: exactly one argument required" >&2
+              return 1
+            end
+
+            cp --remove-destination "$(readlink -f $argv)" $argv
+
+            if test $status -eq 0
+              chmod +w $argv
+            end
+          '';
+        };
       };
 
       # Shell Utilities
@@ -60,6 +74,11 @@
       nix-index = {
         enable = true;
         enableFishIntegration = true;
+      };
+      starship = {
+        enable = true;
+        enableFishIntegration = true;
+        settings = import ./starship.nix;
       };
     };
 
