@@ -20,14 +20,17 @@
           specialArgs = {
             inherit setup;
             inherit inputs;
-            helper = import ./configuration/helper { lib = nixpkgs.lib; };
+            libExtra = import ./configuration/lib { lib = nixpkgs.lib; };
           };
           modules = [
-            inputs.home-manager.nixosModules.home-manager
-            inputs.nur.modules.nixos.default
-            inputs.stylix.nixosModules.stylix
             ./configuration
-          ];
+          ]
+          ++ (with inputs; [
+            home-manager.nixosModules.home-manager
+            nur.modules.nixos.default
+            stylix.nixosModules.stylix
+            nixvim.nixosModules.nixvim
+          ]);
         };
     };
 
@@ -78,6 +81,11 @@
 
     schnell = {
       url = "github:permafrozen/schnell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

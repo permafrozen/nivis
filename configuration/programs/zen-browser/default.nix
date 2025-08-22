@@ -6,6 +6,9 @@
   ...
 }:
 {
+  environment.sessionVariables = {
+    BROWSER = "${lib.getExe inputs.zen-browser.packages.${pkgs.system}.default}";
+  };
   home-manager.users.${setup.user} = {
     imports = [ inputs.zen-browser.homeModules.beta ];
     programs.zen-browser = {
