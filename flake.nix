@@ -29,7 +29,6 @@
             home-manager.nixosModules.home-manager
             nur.modules.nixos.default
             stylix.nixosModules.stylix
-            nixvim.nixosModules.nixvim
           ]);
         };
     };
@@ -84,8 +83,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    neco = {
+      url = "github:permafrozen/neco";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

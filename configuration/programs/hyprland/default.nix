@@ -4,7 +4,7 @@
     ./uwsm.nix
     ./config.nix
     ./hyprpaper.nix
-    ./plugins.nix
+    # ./plugins.nix
   ];
 
   # Use the caches built from Cachix
