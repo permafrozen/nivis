@@ -46,7 +46,7 @@
           "workspaces, 1, 4, easeOutQuint, slide"
         ];
 
-        exec-once = [ "app2unit -s s schnell" ];
+        exec-once = [ "app2unit -s s shell" ];
 
         # Cursor resize/move
         bindm = [

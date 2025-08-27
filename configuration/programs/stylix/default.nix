@@ -1,9 +1,15 @@
-{ setup, pkgs, ... }:
+{
+  config,
+  pkgs,
+  setup,
+  ...
+}:
 {
   # themes from: https://tinted-theming.github.io/tinted-gallery/
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+    override.base01 = "202020";
 
     # fc-list | grep -i <name> to find out the name of the fonts after installing
     fonts = {

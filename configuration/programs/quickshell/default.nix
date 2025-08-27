@@ -1,4 +1,4 @@
 { inputs, setup, ... }:
 {
-  environment.systemPackages = [ inputs.schnell.packages.${setup.system}.default ];
+  environment.systemPackages = [ inputs.shell.packages.${setup.system}.default ];
 }

@@ -78,8 +78,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    schnell = {
-      url = "github:permafrozen/schnell";
+    shell = {
+      url = "github:permafrozen/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
