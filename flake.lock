@@ -717,11 +717,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1756133633,
-        "narHash": "sha256-2O+ssRCd2pAfrTCBsYDcBbFkKlEuyWmYSzzyQ7vCXl8=",
+        "lastModified": 1756323548,
+        "narHash": "sha256-/KV+TTqLiebL6OCg9101pbZNC1tmZTsCNwSrowHWn1A=",
         "owner": "permafrozen",
         "repo": "neco",
-        "rev": "50c3f6efcdf23ce143b6a8013aa153df2596f5e6",
+        "rev": "b455fc4244b7d2eef3e4539f40e4ecb40de9f4bd",
         "type": "github"
       },
       "original": {
@@ -975,7 +975,7 @@
     "quickshell": {
       "inputs": {
         "nixpkgs": [
-          "schnell",
+          "shell",
           "nixpkgs"
         ]
       },
@@ -1004,12 +1004,12 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_4",
         "nur": "nur",
-        "schnell": "schnell",
+        "shell": "shell",
         "stylix": "stylix",
         "zen-browser": "zen-browser"
       }
     },
-    "schnell": {
+    "shell": {
       "inputs": {
         "flake-parts": "flake-parts_5",
         "nixpkgs": [
@@ -1018,16 +1018,16 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1755243034,
-        "narHash": "sha256-YUgLbWCLw76hgRdFF1pVxf92uXFUMOJlno4Pov+jk+k=",
+        "lastModified": 1756308394,
+        "narHash": "sha256-RG8ye6oXmP3bYW6yaycRoVxgLhVMRlTJfNLGO6iTwFo=",
         "owner": "permafrozen",
-        "repo": "schnell",
-        "rev": "7f8c75e5ffc458bc4c5cb4f0fb2bb5f890b377f9",
+        "repo": "shell",
+        "rev": "2af112cd34a9026425ff0b35ff9ec24352ddfeaa",
         "type": "github"
       },
       "original": {
         "owner": "permafrozen",
-        "repo": "schnell",
+        "repo": "shell",
         "type": "github"
       }
     },

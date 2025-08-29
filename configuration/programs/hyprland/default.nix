@@ -3,7 +3,6 @@
   imports = [
     ./uwsm.nix
     ./config.nix
-    ./hyprpaper.nix
     # ./plugins.nix
   ];
 
