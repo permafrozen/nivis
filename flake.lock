@@ -717,11 +717,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1756323548,
-        "narHash": "sha256-/KV+TTqLiebL6OCg9101pbZNC1tmZTsCNwSrowHWn1A=",
+        "lastModified": 1756631876,
+        "narHash": "sha256-pHXiwg+eY3O37g3mk15y3mOZtU9otOAfB1eDC5rBXYw=",
         "owner": "permafrozen",
         "repo": "neco",
-        "rev": "b455fc4244b7d2eef3e4539f40e4ecb40de9f4bd",
+        "rev": "450803f52c0f304294d99eea46e8564fbcb50e2d",
         "type": "github"
       },
       "original": {
@@ -980,11 +980,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753595452,
-        "narHash": "sha256-vqkSDvh7hWhPvNjMjEDV4KbSCv2jyl2Arh73ZXe274k=",
+        "lastModified": 1756352679,
+        "narHash": "sha256-UkKaPXTPzT7HAcBOV4NlWx2GAEJaTf0eb5OX6Q6jPqg=",
         "owner": "quickshell-mirror",
         "repo": "quickshell",
-        "rev": "a5431dd02dc23d9ef1680e67777fed00fe5f7cda",
+        "rev": "f7597cdae2d537c5b12843599955856090dc49d5",
         "type": "github"
       },
       "original": {
@@ -1018,11 +1018,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1756308394,
-        "narHash": "sha256-RG8ye6oXmP3bYW6yaycRoVxgLhVMRlTJfNLGO6iTwFo=",
+        "lastModified": 1756664436,
+        "narHash": "sha256-WRqQ1xSir+xftDKXbkJMqQ+p+g2QpubH2ilEIxLF4VU=",
         "owner": "permafrozen",
         "repo": "shell",
-        "rev": "2af112cd34a9026425ff0b35ff9ec24352ddfeaa",
+        "rev": "a76d3b3ac99ed540dd9e8727f2bd478e3cea902d",
         "type": "github"
       },
       "original": {
