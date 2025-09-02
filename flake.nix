@@ -29,6 +29,8 @@
             home-manager.nixosModules.home-manager
             nur.modules.nixos.default
             stylix.nixosModules.stylix
+            optnix.nixosModules.optnix
+            spicetify-nix.nixosModules.spicetify
           ]);
         };
     };
@@ -37,6 +39,7 @@
 
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nur.url = "github:nix-community/NUR";
+    optnix.url = "github:water-sucks/optnix";
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -85,6 +88,11 @@
 
     neco = {
       url = "github:permafrozen/neco";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
