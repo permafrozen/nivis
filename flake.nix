@@ -1,5 +1,5 @@
 {
-  description = "final nixos configuration flake";
+  description = "personal nixos configuration flake";
 
   outputs =
     { nixpkgs, ... }@inputs:
@@ -20,10 +20,10 @@
           specialArgs = {
             inherit setup;
             inherit inputs;
-            libExtra = import ./configuration/lib { lib = nixpkgs.lib; };
+            libExtra = import ./src/lib { lib = nixpkgs.lib; };
           };
           modules = [
-            ./configuration
+            ./src
           ]
           ++ (with inputs; [
             home-manager.nixosModules.home-manager
