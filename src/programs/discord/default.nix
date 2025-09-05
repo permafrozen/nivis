@@ -17,9 +17,8 @@
         ];
       };
       vencord.settings = {
-        autoUpdate = false;
+        autoUpdate = true;
         autoUpdateNotification = false;
-        notifyAboutUpdates = false;
         plugins = {
           FakeNitro.enabled = true;
           ClearURLs.enabled = true;

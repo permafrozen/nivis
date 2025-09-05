@@ -67,7 +67,7 @@
 
         bind = [
           # applications
-          "$1mod, T, exec, kitty"
+          "$1mod, T, exec, ghostty"
           "$1mod, S, exec, app2unit -s a zen-beta"
           "$1mod, A, exec, anyrun"
 

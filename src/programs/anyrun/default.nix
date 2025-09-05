@@ -32,7 +32,7 @@
           Config(
             desktop_actions: true,
             max_entries: 10,
-            terminal: Some("kitty"),
+            terminal: Some("ghostty"),
           )
         '';
       };

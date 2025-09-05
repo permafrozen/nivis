@@ -751,11 +751,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1756631876,
-        "narHash": "sha256-pHXiwg+eY3O37g3mk15y3mOZtU9otOAfB1eDC5rBXYw=",
+        "lastModified": 1756993231,
+        "narHash": "sha256-5xf3sBApjX8obszgfNVQediCAzCaS44ZqADjU9JtWyk=",
         "owner": "permafrozen",
         "repo": "neco",
-        "rev": "450803f52c0f304294d99eea46e8564fbcb50e2d",
+        "rev": "1b4de297711b5d18ff9d6ced51085b8291cd713f",
         "type": "github"
       },
       "original": {
