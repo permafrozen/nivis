@@ -1,3 +1,5 @@
+// INFO: source: https://github.com/KroneCorylus/ghostty-shader-playground
+
 float getSdfRectangle(in vec2 p, in vec2 xy, in vec2 b)
 {
     vec2 d = abs(p - xy) - b;
@@ -88,7 +90,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     float vertexFactor = determineStartVertexFactor(currentCursor.xy, previousCursor.xy);
     float invertedVertexFactor = 1.0 - vertexFactor;
 
-    // Set every vertex of my parallelogram
+    // Set every vertex of my parellogram
     vec2 v0 = vec2(currentCursor.x + currentCursor.z * vertexFactor, currentCursor.y - currentCursor.w);
     vec2 v1 = vec2(currentCursor.x + currentCursor.z * invertedVertexFactor, currentCursor.y);
     vec2 v2 = vec2(previousCursor.x + currentCursor.z * invertedVertexFactor, previousCursor.y);

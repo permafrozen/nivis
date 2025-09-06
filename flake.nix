@@ -36,10 +36,17 @@
     };
 
   inputs = {
+    nixpkgs = {
+      url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    };
 
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nur.url = "github:nix-community/NUR";
-    optnix.url = "github:water-sucks/optnix";
+    nur = {
+      url = "github:nix-community/NUR";
+    };
+
+    optnix = {
+      url = "github:water-sucks/optnix";
+    };
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -51,7 +58,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+    };
+
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
