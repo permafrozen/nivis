@@ -42,6 +42,7 @@
           youtube-recommended-videos
           search-by-image
           return-youtube-dislikes
+          dictionary-german
           youtube-nonstop
         ];
 
