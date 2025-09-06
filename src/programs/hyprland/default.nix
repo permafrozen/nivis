@@ -3,7 +3,7 @@
   imports = [
     ./uwsm.nix
     ./config.nix
-    # ./plugins.nix
+    ./plugins.nix
   ];
 
   # Use the caches built from Cachix

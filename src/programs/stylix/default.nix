@@ -9,7 +9,7 @@
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
-    override.base01 = "202020";
+    override.base01 = "202020"; # TODO: Extract Color From .yaml Theme
 
     # fc-list | grep -i <name> to find out the name of the fonts after installing
     fonts = {
@@ -29,8 +29,8 @@
       };
 
       emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
+        package = pkgs.nerd-fonts.symbols-only;
+        name = "Symbols Nerd Font";
       };
     };
     cursor = {
