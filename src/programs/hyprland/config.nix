@@ -69,7 +69,7 @@
           # applications
           "$1mod, T, exec, ghostty"
           "$1mod, S, exec, app2unit -s a zen-beta"
-          "$1mod, A, exec, anyrun"
+          "$1mod, A, global, shell:runner"
 
           # window/session killing
           "$1mod, Q, killactive,"
@@ -82,7 +82,7 @@
           "$1mod, L, movefocus, r"
           "$1mod, F, fullscreen, 0"
 
-          # Zoom Controlls
+          # Zoom Controls
           "$1mod, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 1.1}')"
           "$1mod, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 0.9}')"
 
