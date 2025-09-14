@@ -70,6 +70,7 @@
           "$1mod, T, exec, ghostty"
           "$1mod, S, exec, app2unit -s a zen-beta"
           "$1mod, A, global, shell:runner"
+          "$1mod, PRINT, exec, hyprshot -m region --clipboard-only"
 
           # window/session killing
           "$1mod, Q, killactive,"
@@ -109,6 +110,13 @@
           "$2mod, 8, movetoworkspacesilent, 8"
           "$2mod, 9, movetoworkspacesilent, 9"
           "$2mod, 0, movetoworkspacesilent, 10"
+        ];
+
+        windowrule = [ "stayfocused,class:^(com.oracle.javafx.scenebuilder.app.SceneBuilderApp)$" ];
+
+        layerrule = [
+          "noanim, hyprpicker"
+          "noanim, selection "
         ];
       };
     };

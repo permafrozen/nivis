@@ -1,10 +1,20 @@
-{ inputs, setup, ... }:
+{
+  inputs,
+  setup,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./uwsm.nix
     ./config.nix
     ./plugins.nix
   ];
+
+  environment.systemPackages = [ pkgs.hyprshot ];
+
+  services.gnome.gnome-keyring.enable = true;
+  programs.dconf.enable = true;
 
   # Use the caches built from Cachix
   nix.settings = {

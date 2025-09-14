@@ -4,6 +4,8 @@
     jetbrains.clion
     jetbrains.idea-ultimate
     jetbrains.datagrip
+    jetbrains.pycharm-professional
+    androidStudioPackages.canary
     scenebuilder
   ];
 

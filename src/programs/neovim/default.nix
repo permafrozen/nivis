@@ -18,6 +18,8 @@
           config.lib.stylix.nixvim.config // { config = lib.mkForce config.lib.stylix.nixvim.config.config; }
         );
       in
-      [ nixvim-stylix ];
+      [
+        # nixvim-stylix
+      ];
   };
 }
