@@ -8,6 +8,9 @@
     androidStudioPackages.canary
     scenebuilder
   ];
+  environment.variables = {
+    GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
+  };
 
   programs.java = {
     enable = true;
