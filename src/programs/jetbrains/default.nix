@@ -1,12 +1,22 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    jetbrains.clion
-    jetbrains.idea-ultimate
+    # db
     jetbrains.datagrip
-    jetbrains.pycharm-professional
+
+    # c*
+    jetbrains.clion
+
+    # android
     androidStudioPackages.canary
+
+    # java
+    jetbrains.idea-ultimate
     scenebuilder
+
+    # python
+    jetbrains.pycharm-professional
+    conda
   ];
   environment.variables = {
     GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";

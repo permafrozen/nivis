@@ -1221,11 +1221,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1757261457,
-        "narHash": "sha256-jgy/Cwi6z1AC23AlE1tgkDM6ZSytXzSXL27Cmo4Vq/I=",
+        "lastModified": 1758051384,
+        "narHash": "sha256-HkStsHRphn9wQMooECnDxUSnN/zADekyMVpEpffJNa0=",
         "owner": "permafrozen",
         "repo": "shell",
-        "rev": "6e264f84208bef641e453114f3ec853417541316",
+        "rev": "b39a8062a5c15db55ada69ccd51b5bd1f5b24fe5",
         "type": "github"
       },
       "original": {
