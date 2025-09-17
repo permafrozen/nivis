@@ -6,10 +6,12 @@
       settings = {
         general = {
           allow_tearing = true;
+          border_size = 2;
         };
 
         decoration = {
           rounding = 20;
+          border_part_of_window = false;
         };
 
         ecosystem = {
@@ -112,7 +114,10 @@
           "$2mod, 0, movetoworkspacesilent, 10"
         ];
 
-        windowrule = [ "stayfocused,class:^(com.oracle.javafx.scenebuilder.app.SceneBuilderApp)$" ];
+        windowrule = [
+          "stayfocused,class:^(com.oracle.javafx.scenebuilder.app.SceneBuilderApp)$"
+          "noborder, onworkspace:w[t1]"
+        ];
 
         layerrule = [
           "noanim, hyprpicker"

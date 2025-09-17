@@ -9,7 +9,7 @@
   # themes from: https://tinted-theming.github.io/tinted-gallery/
   stylix =
     let
-      themePath = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+      themePath = "${pkgs.base16-schemes}/share/themes/moonlight.yaml";
     in
     {
       enable = true;
