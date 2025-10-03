@@ -85,11 +85,6 @@
       };
     };
 
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -100,8 +95,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neco = {
-      url = "github:permafrozen/neco";
+    ren = {
+      url = "github:permafrozen/ren";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
